@@ -1,0 +1,28 @@
+.profile {
+  width: fit-content;
+  padding-right: 10px;
+  display: inline-block;
+}
+
+.profile-child {
+  display: inline-block;
+  align-items: center;
+  vertical-align: middle;
+  text-align: left;
+  margin-inline: 3px;
+}
+
+body {
+  background-color: #f2efe7;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.body-contents {
+  width: max-content;
+  height: fit-content;
+  text-align: center;
+}
