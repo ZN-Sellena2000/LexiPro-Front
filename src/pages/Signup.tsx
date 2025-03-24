@@ -1,11 +1,20 @@
 import React from "react";
-import {} from "@mui/material";
+import { Box, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 function Signup() {
+  const navigate = useNavigate();
+
   return (
-    <div>
-      <p>Signup page</p>
-    </div>
+    <Box>
+      <Button
+        variant="contained"
+        sx={{ m: 2 }}
+        onClick={() => navigate("/login")}
+      >
+        Sign Up
+      </Button>
+    </Box>
   );
 }
 

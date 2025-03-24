@@ -1,11 +1,28 @@
 import React from "react";
-import {} from "@mui/material";
+import "../design/findidpw.css";
+import { Box, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 function Findidpw() {
+  const navigate = useNavigate();
+
   return (
-    <div>
-      <p>Find Id and Reset Pw page</p>
-    </div>
+    <Box>
+      <Button
+        variant="contained"
+        sx={{ m: 2 }}
+        onClick={() => navigate("/findid")}
+      >
+        Find ID
+      </Button>
+      <Button
+        variant="contained"
+        sx={{ m: 2 }}
+        onClick={() => navigate("/resetpw")}
+      >
+        Reset Password
+      </Button>
+    </Box>
   );
 }
 

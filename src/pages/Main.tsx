@@ -1,16 +1,10 @@
 import React from "react";
-import { Avatar, Button } from "@mui/material";
+import { Avatar, Button, Box } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import "../design/main.css";
 import profile_default from "../images/profile_default.png";
 
-//Avatar tag 사용할 때 alt 값에는 사용자 이름/닉네임이 들어가도록 설정할 것.
-//alt 값에 기본 프로필을 넣는게 좋지 않을까 했는데 기본 프로필 보다 사용자 정보로 아이콘 생성하는 쪽이 더 좋아보임.
-//alt 값이 적용되는 프로필은 무조건 사용자 이름의 첫 글자로 적용
-// 배경 색은 회색
-// "Test User"인 경우 : T
-// "테스트 사용자"인 경우 : 테
-// 배경색 바꾸려면 {...stringAvatar('User Name')} 사용
-// 크기 변경하려면 sx={{width: 56, height: 56}}
+//Box 컴포넌트 사용해서 리팩토링 필요
 
 function stringToColor(string: string) {
   let hash = 0;
@@ -42,6 +36,7 @@ function stringAvatar(name: string) {
 }
 
 function Main() {
+  const navigate = useNavigate();
   var user_name = "Test User";
   var profile = null;
   var score = 0;
@@ -50,7 +45,7 @@ function Main() {
   profile = profile_default;
 
   return (
-    <body>
+    <Box sx={{ display: "flex", flexWrap: "wrap" }}>
       <div className="body-contents">
         <div className="profile">
           <div className="profile-child">
@@ -68,10 +63,22 @@ function Main() {
         <h2>
           {solved}/{total}
         </h2>
-        <Button variant="contained">문제 풀기</Button>
-        <Button variant="contained">과거 기록 보기</Button>
+        <Button
+          variant="contained"
+          sx={{ m: 2 }}
+          onClick={() => navigate("/test")}
+        >
+          문제 풀기
+        </Button>
+        <Button
+          variant="contained"
+          sx={{ m: 2 }}
+          onClick={() => navigate("/statistics")}
+        >
+          과거 기록 보기
+        </Button>
       </div>
-    </body>
+    </Box>
   );
 }
 

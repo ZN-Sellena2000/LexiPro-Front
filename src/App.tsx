@@ -19,7 +19,7 @@ function App() {
         <Routes>
           <Route path="/ct" element={<ComponentsTest />}></Route>
           <Route path="/main" element={<Main />}></Route>
-          <Route path="/" element={<Login />}></Route>
+          <Route path="/login" element={<Login />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/findidpw" element={<Findidpw />}></Route>
           <Route path="/findid" element={<Findid />}></Route>
