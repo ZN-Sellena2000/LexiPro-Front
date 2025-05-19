@@ -42,6 +42,7 @@ function Main() {
   var score = 0;
   var solved = 0;
   var total = 0;
+  var goal_score = 0;
   profile = profile_default;
 
   return (
@@ -57,22 +58,25 @@ function Main() {
           </div>
           <div className="profile-child">
             <p>Name : {user_name}</p>
-            <p>Score : {score}</p>
+            <p>Goal : {goal_score} / 6.0</p>
           </div>
         </div>
-        <h2>
-          {solved}/{total}
-        </h2>
+        <div className="profile-current">
+          <h2>
+            Solved : {solved} / {total}
+          </h2>
+          <h2>Score : {score} / 6.0</h2>
+        </div>
         <Button
           variant="contained"
-          sx={{ m: 2 }}
+          sx={{ m: 2, bgcolor: "#48A6A7" }}
           onClick={() => navigate("/test")}
         >
           문제 풀기
         </Button>
         <Button
           variant="contained"
-          sx={{ m: 2 }}
+          sx={{ m: 2, bgcolor: "#48A6A7" }}
           onClick={() => navigate("/statistics")}
         >
           과거 기록 보기

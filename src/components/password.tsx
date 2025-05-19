@@ -10,7 +10,14 @@ import {
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 
-function Password() {
+interface PasswordProps {
+  field_name: string;
+  width: string;
+  value: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+function Password({ field_name, width, value, onChange }: PasswordProps) {
   const [showPassword, setShowPassword] = React.useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -30,19 +37,21 @@ function Password() {
   return (
     <Box sx={{ display: "flex", flexWrap: "wrap" }}>
       <FormControl
-        sx={{ m: 1, width: "25ch", bgcolor: "#CBDCEB" }}
+        sx={{ m: 1, width: width, bgcolor: "#CBDCEB" }}
         variant="filled"
       >
-        <InputLabel htmlFor="filled-adornment-password">Password</InputLabel>
+        <InputLabel htmlFor="filled-adornment-password">
+          {field_name}
+        </InputLabel>
         <FilledInput
           id="filled-adornment-password"
           type={showPassword ? "text" : "password"}
+          value={value}
+          onChange={onChange}
           endAdornment={
             <InputAdornment position="end">
               <IconButton
-                aria-label={
-                  showPassword ? "hide the password" : "display the password"
-                }
+                aria-label={showPassword ? "hide password" : "show password"}
                 onClick={handleClickShowPassword}
                 onMouseDown={handleMouseDownPassword}
                 onMouseUp={handleMouseUpPassword}

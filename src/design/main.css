@@ -12,6 +12,18 @@
   margin-inline: 3px;
 }
 
+p {
+  margin-top: 1px;
+  margin-bottom: 1px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+h2 {
+  display: inline-block;
+  margin-inline: 15px;
+}
+
 body {
   background-color: #f2efe7;
   margin: 0;

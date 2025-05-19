@@ -10,14 +10,14 @@ function Findidpw() {
     <Box>
       <Button
         variant="contained"
-        sx={{ m: 2 }}
+        sx={{ m: 2, bgcolor: "#608BC1" }}
         onClick={() => navigate("/findid")}
       >
         Find ID
       </Button>
       <Button
         variant="contained"
-        sx={{ m: 2 }}
+        sx={{ m: 2, bgcolor: "#608BC1" }}
         onClick={() => navigate("/resetpw")}
       >
         Reset Password
